@@ -7,10 +7,35 @@
     console.log(learn_data);
 </script>
 
-<figure>
-    <figcaption>Listen to the {{learn_data['name']}}:</figcaption>
-    <audio controls src="{{url_for('static', filename=learn_data['audio'])}}"></audio>
-    </figure>
+
+
+<div class="row">
+    {{learn_data['intro-text']}}
+</div>
+<div class="row">
+    <div class="col-4">
+        <img src="{{learn_data['image']}}" alt="Image of {{learn_data['name']}}" class="img-fluid">
+    </div>
+    <div class="col-4">
+        <div class="row">
+            <figure>
+                <figcaption>Listen to the {{learn_data['name']}}:</figcaption>
+                <audio controls src="{{url_for('static', filename=learn_data['audio'])}}"></audio>
+            </figure>            
+        </div>
+        <div class="row">
+            Pay attention to:
+
+            {{learn_data['attention']}}
+        </div>
+
+    </div>
+    <div class="col-4">
+
+    </div>
+</div>
+
+
 
 
 {% endblock %}
