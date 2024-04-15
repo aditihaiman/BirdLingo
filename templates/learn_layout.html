@@ -3,7 +3,7 @@
 {% block content %}
 
 <script>
-    let learn_data = {{learn_data|tojson}};
+    let learn_data = {{ learn_data| tojson}};
     console.log(learn_data);
 </script>
 
@@ -21,14 +21,17 @@
             <figure>
                 <figcaption>Listen to the {{learn_data['name']}}:</figcaption>
                 <audio controls src="{{url_for('static', filename=learn_data['audio'])}}"></audio>
-            </figure>            
+            </figure>
         </div>
         <div class="row">
             Pay attention to:
 
-            <div>
-                {{learn_data['attention']}}
-            </div>
+        </div>
+        <div class="row">
+            {% for item in learn_data['attention'] %}
+            <li>{{item}}</li>
+
+            {% endfor %}
         </div>
 
     </div>
@@ -36,16 +39,25 @@
         <div class="row">
             Characteristics
 
-            <div id="characteristics">
-                {{learn_data['characteristics']}}
-            </div>
+        </div>
+        <div class="row">
+            {% for item in learn_data['characteristics'] %}
+            <li>{{item}}</li>
+
+            {% endfor %}
         </div>
         <div class="row">
             Spectrogram
-            <div id="spectrogram">
-                {{learn_data['spectrogram']}}
-                <img src="{{url_for('static', filename=learn_data['spectro-visual'])}}" class="img-fluid">
-            </div>
+
+        </div>
+        <div class="row" id="spectrogram">
+            <img src="{{url_for('static', filename=learn_data['spectro-visual'])}}" class="img-fluid">
+        </div>
+        <div class="row">
+            {% for item in learn_data['spectrogram'] %}
+            <li>{{item}}</li>
+
+            {% endfor %}
         </div>
     </div>
 </div>
