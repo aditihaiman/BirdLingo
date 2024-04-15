@@ -25,27 +25,20 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light lightgray mb-2">
-        <a class="navbar-brand" href="/">Northeastern Backyard Birds</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">BirdLingo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/add">Add Bird</a>
-                </li>
-            </ul>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/learn">Learn</a>
+            <a class="nav-item nav-link" href="/quiz">Quiz</a>
+          </div>
         </div>
-        <form class="d-flex p-1" id="search">
-            <input id="search_input" class="form-control me-2 search" type="search" placeholder="Search"
-                aria-label="Search">
-            <button class="btn base search ml-1" type="submit">Search</button>
-        </form>
-    </nav>
+      </nav>
 
-    <div class="container base">
+    <div class="container">
         {% block content %}
         {% endblock %}
     </div>
