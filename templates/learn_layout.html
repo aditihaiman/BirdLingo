@@ -2,8 +2,15 @@
 
 {% block content %}
 
+<script>
+    let learn_data = {{learn_data|tojson}};
+    console.log(learn_data);
+</script>
 
-
+<figure>
+    <figcaption>Listen to the {{learn_data['name']}}:</figcaption>
+    <audio controls src="{{url_for('static', filename=learn_data['audio'])}}"></audio>
+    </figure>
 
 
 {% endblock %}
