@@ -38,7 +38,7 @@ learn_data = {
         "attention": "",
         "characteristics": "",
         "spectrogram": "",
-        "spectro-visual": "",
+        "spectro-visual": "media/cardinal-spectro.png",
     },
     2: {
         "id": 2,

@@ -12,7 +12,7 @@
 <div class="row">
     {{learn_data['intro-text']}}
 </div>
-<div class="row">
+<div class="row mb-5 pb-5">
     <div class="col-4 m-auto">
         <img src="{{learn_data['image']}}" alt="Image of {{learn_data['name']}}" class="img-fluid">
     </div>
@@ -59,6 +59,15 @@
 
             {% endfor %}
         </div>
+    </div>
+</div>
+<div class="row mt-5 pt-5">
+    <div class="col">
+        <button type="button" class="nav-button" id="prev-button">Prev</button>
+        
+    </div>
+    <div class="col float-end text-right">
+        <button type="button" class="nav-button" id="next-button">Next</button>
     </div>
 </div>
 

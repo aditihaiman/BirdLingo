@@ -32,6 +32,9 @@ body {
     border-radius: 10px;
 }
 
-.bird-image{
-    
+.nav-button{
+    background-color: #b5ca8d;
+    width: 100px;
+    padding: 10px;
+    font-size: 20px;
 }
