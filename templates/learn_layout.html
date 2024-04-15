@@ -13,10 +13,10 @@
     {{learn_data['intro-text']}}
 </div>
 <div class="row">
-    <div class="col-4">
+    <div class="col-4 m-auto">
         <img src="{{learn_data['image']}}" alt="Image of {{learn_data['name']}}" class="img-fluid">
     </div>
-    <div class="col-4">
+    <div class="col-4 m-auto">
         <div class="row">
             <figure>
                 <figcaption>Listen to the {{learn_data['name']}}:</figcaption>
@@ -26,12 +26,27 @@
         <div class="row">
             Pay attention to:
 
-            {{learn_data['attention']}}
+            <div>
+                {{learn_data['attention']}}
+            </div>
         </div>
 
     </div>
-    <div class="col-4">
+    <div class="col-4 m-auto">
+        <div class="row">
+            Characteristics
 
+            <div id="characteristics">
+                {{learn_data['characteristics']}}
+            </div>
+        </div>
+        <div class="row">
+            Spectrogram
+            <div id="spectrogram">
+                {{learn_data['spectrogram']}}
+                <img src="{{url_for('static', filename=learn_data['spectro-visual'])}}" class="img-fluid">
+            </div>
+        </div>
     </div>
 </div>
 

@@ -13,40 +13,50 @@ learn_data = {
         "name": "Red-Tailed Hawk",
         "intro-text": "Let's start with something easy: ",
         "image": "https://www.allaboutbirds.org/guide/assets/photo/319861731-1280px.jpg",
-        "audio": "Hawk.mp3",
-        "attention": "",
-        "characteristics": "",
-        "spectrogram": "",
-        "spectro-visual": "",
+        "audio": "media/Hawk.mp3",
+        "attention": [
+            "When is it rising or falling in pitch?",
+            "Are the pitches clear (like a whistle) or harsh?",
+        ],
+        "characteristics": [
+            "Sounds like a harsh scream",
+            "Short 2-3 second simple call",
+            "Falling pitch",
+        ],
+        "spectrogram": [
+            "Does this spectrogram look like it matches the Red Tailed Hawk call?",
+            "Note the fuzziness instead of one clear line and the gentle downward slope. Fuzziness in a spectrogram is usually due to harsh sounds.",
+        ],
+        "spectro-visual": "media/hawk-spectro.png",
     },
     1: {
         "id": 1,
         "name": "Northern Cardinal",
         "intro-text": "Let's try another bird: ",
         "image": "https://www.allaboutbirds.org/guide/assets/photo/297087301-720px.jpg",
-        "audio": "Cardinal.mp3",
+        "audio": "media/Cardinal.mp3",
         "attention": "",
         "characteristics": "",
         "spectrogram": "",
         "spectro-visual": "",
     },
-        2: {
+    2: {
         "id": 2,
         "name": "Mourning Dove",
         "intro-text": "Let's try another bird: ",
         "image": "https://www.allaboutbirds.org/guide/assets/photo/60386921-1280px.jpg",
-        "audio": "Dove.mp3",
+        "audio": "media/Dove.mp3",
         "attention": "",
         "characteristics": "",
         "spectrogram": "",
         "spectro-visual": "",
     },
-        3: {
+    3: {
         "id": 3,
         "name": "American Robin",
         "intro-text": "Let's try another bird: ",
         "image": "https://www.allaboutbirds.org/guide/assets/photo/303441381-1280px.jpg",
-        "audio": "Robin.mp3",
+        "audio": "media/Robin.mp3",
         "attention": "",
         "characteristics": "",
         "spectrogram": "",
@@ -61,6 +71,7 @@ learn_data = {
 @app.route("/")
 def home():
     return render_template("home.html")
+
 
 # @app.route("/add_bird", methods=["GET", "POST"])
 # def add_bird():
