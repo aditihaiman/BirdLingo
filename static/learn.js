@@ -1,6 +1,7 @@
 $(function () {
     $("#next-button").on('click', navigate_next);
     $("#prev-button").on('click', navigate_prev);
+    $("#home-learn").on('click', navigate_next);
 });
 
 
@@ -11,6 +12,9 @@ function navigate_next(){
             //FILL IN WHOEVER IS DOING QUIZ
         }
         else window.location.href = "/learn/" + (Number(learn_data['id'])+1);
+    }
+    else {
+        window.location.href = "/learn/0";
     }
 }
 

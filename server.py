@@ -49,7 +49,7 @@ learn_data = {
         "attention": "",
         "characteristics": "",
         "spectrogram": "",
-        "spectro-visual": "",
+        "spectro-visual": "media/dove-spectro.png",
     },
     3: {
         "id": 3,
@@ -60,7 +60,7 @@ learn_data = {
         "attention": "",
         "characteristics": "",
         "spectrogram": "",
-        "spectro-visual": "",
+        "spectro-visual": "media/robin-spectro.png",
     },
 }
 
