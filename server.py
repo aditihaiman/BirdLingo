@@ -35,9 +35,19 @@ learn_data = {
         "intro-text": "Let's try another bird: ",
         "image": "https://www.allaboutbirds.org/guide/assets/photo/297087301-720px.jpg",
         "audio": "media/Cardinal.mp3",
-        "attention": "",
-        "characteristics": "",
-        "spectrogram": "",
+        "attention": [
+            "How many sections are there to the song?",
+            "Is there any repetition?",
+            "Is the tone clear like a whistle or harsh like a scream?",
+        ],
+        "characteristics": [
+            "Two parts: First is slow falling pitch, second is a series of fast notes going up and down",
+            "Clear, whistle-like quality",
+        ],
+        "spectrogram": [
+            "What do you notice about how the speed of the notes vary throughout the song?",
+            "Does the spectrogram reflect these qualities?",
+        ],
         "spectro-visual": "media/cardinal-spectro.png",
     },
     2: {

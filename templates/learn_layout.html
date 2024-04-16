@@ -13,10 +13,10 @@
     {{learn_data['intro-text']}} {{learn_data['name']}}
 </div>
 <div class="row mb-5 pb-5">
-    <div class="col-4 m-auto">
+    <div class="col-4">
         <img src="{{learn_data['image']}}" alt="Image of {{learn_data['name']}}" class="img-fluid">
     </div>
-    <div class="col-4 m-auto">
+    <div class="col-4">
         <div class="row">
             <figure>
                 <figcaption>Listen to the {{learn_data['name']}}:</figcaption>
@@ -35,27 +35,32 @@
         </div>
 
     </div>
-    <div class="col-4 m-auto">
-        <div class="row">
+    <div class="col-4">
+        <div class="row h4 base m-1 char-spectro" id="characteristics">
             Characteristics
 
         </div>
-        <div class="row">
+        <div class="row d-none" id="char-info">
             {% for item in learn_data['characteristics'] %}
-            <li>{{item}}</li>
+            <ul class="list-group">
+                <li class="list-group-item">{{item}}</li>
+            </ul>
+            
 
             {% endfor %}
         </div>
-        <div class="row">
+        <div class="row h4 base m-1 char-spectro" id="spectrogram">
             Spectrogram
 
         </div>
-        <div class="row" id="spectrogram">
+        <div class="row d-none" id="spectro-info">
             <img src="{{url_for('static', filename=learn_data['spectro-visual'])}}" class="img-fluid">
-        </div>
-        <div class="row">
+
             {% for item in learn_data['spectrogram'] %}
-            <li>{{item}}</li>
+            <ul class="list-group">
+                <li class="list-group-item">{{item}}</li>
+            </ul>
+            
 
             {% endfor %}
         </div>
