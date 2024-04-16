@@ -17,19 +17,22 @@
         <img src="{{learn_data['image']}}" alt="Image of {{learn_data['name']}}" class="img-fluid">
     </div>
     <div class="col-4">
-        <div class="row m-auto">
+        <div class="row m-2">
             <figure>
-                <figcaption>Listen to the {{learn_data['name']}}:</figcaption>
+                <figcaption class="h4">Listen to the {{learn_data['name']}}:</figcaption>
                 <audio controls src="{{url_for('static', filename=learn_data['audio'])}}"></audio>
             </figure>
         </div>
-        <div class="row m-auto">
+        <div class="row m-2 h4">
             Pay attention to:
 
         </div>
-        <div class="row m-auto">
+        <div class="row m-2">
             {% for item in learn_data['attention'] %}
-            <li>{{item}}</li>
+            <ul class="list-group mb-2">
+                <li class="list-group-item">{{item}}</li>
+            </ul>
+            
 
             {% endfor %}
         </div>
