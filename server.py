@@ -58,7 +58,9 @@ learn_data = {
         "intro-text": "Let's try another bird: ",
         "image": "https://www.allaboutbirds.org/guide/assets/photo/60386921-1280px.jpg",
         "audio": "media/Dove.mp3",
-        "attention": ["There is some background noise in this recording. Make sure you are listening carefully to the dove and not the other birds."],
+        "attention": [
+            "There is some background noise in this recording. Make sure you are listening carefully to the dove and not the other birds."
+        ],
         "characteristics": [
             "Repeated 'coo-ing' sound",
             "Relatively low pitch that stays constant (doesn't move up or down)",
@@ -75,9 +77,15 @@ learn_data = {
         "intro-text": "Let's try another bird: ",
         "image": "https://www.allaboutbirds.org/guide/assets/photo/303441381-1280px.jpg",
         "audio": "media/Robin.mp3",
-        "attention": "",
-        "characteristics": "",
-        "spectrogram": "",
+        "attention": [
+            "Are the individual parts repeated?",
+            "Is the quality clear like a whistle or harsh?",
+        ],
+        "characteristics": [
+            "Short but complex parts are repeated multiple times in slightly different ways.",
+            "A good way to remember this song is that is sounds like an opera singer with lots of vibrato.",
+        ],
+        "spectrogram": ["Note the repeated individual parts that are mostly similar"],
         "spectro-visual": "media/robin-spectro.png",
     },
 }
@@ -89,14 +97,9 @@ quiz_data = {
         "text": "Select which qualities apply to the recording. Use the hint to see a spectrogram.",
         "image": "",
         "audio": ["media/Hawk.mp3"],
-        "options": [
-            "harsh",
-            "falling pitch",
-            "multiple parts",
-            "variable pitch"
-        ],
+        "options": ["harsh", "falling pitch", "multiple parts", "variable pitch"],
         "spectro-visual": ["media/hawk-spectro.png"],
-        "correct": []
+        "correct": [],
     },
     1: {
         "id": 1,
@@ -108,10 +111,10 @@ quiz_data = {
             "Red Tailed Hawk",
             "American Robin",
             "Mourning Dove",
-            "Northern Cardinal"
+            "Northern Cardinal",
         ],
         "spectro-visual": ["media/cardinal-spectro.png"],
-        "correct": []
+        "correct": [],
     },
     2: {
         "id": 2,
@@ -123,11 +126,11 @@ quiz_data = {
             "Northern Cardinal",
             "Mourning Dove",
             "Red-Tailed Hawk",
-            "American Robin"
+            "American Robin",
         ],
         "spectro-visual": ["media/hawk-spectro.png", "media/robin-spectro.png"],
-        "correct": []
-    }
+        "correct": [],
+    },
 }
 
 
@@ -157,6 +160,7 @@ def learn(id=None):
     global learn_data
     return render_template("learn_layout.html", learn_data=learn_data[int(id)])
 
+
 @app.route("/quiz/<id>")
 def quiz(id=None):
     global quiz_data
@@ -167,18 +171,20 @@ def quiz(id=None):
 def results():
     return render_template("quiz_results.html")
 
-@app.route('/update_total', methods=['POST'])
+
+@app.route("/update_total", methods=["POST"])
 def update_variable():
     global total
-    new_value = request.form['variable']
+    new_value = request.form["variable"]
     if total <= int(new_value):
         total = total + 1
     print(total)
     return "Variable updated successfully!"
 
-@app.route('/get_total', methods=['GET'])
+
+@app.route("/get_total", methods=["GET"])
 def get_total():
-    return jsonify({'variable': total})
+    return jsonify({"variable": total})
 
 
 # @app.route("/search_results/<search_term>", methods=["GET", "POST"])
