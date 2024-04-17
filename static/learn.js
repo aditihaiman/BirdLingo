@@ -34,9 +34,6 @@ function navigate_next() {
 }
 
 
-
-
-
 function navigate_prev() {
     let currentId = parseInt(window.location.pathname.split('/').pop());
     if (window.location.href.includes('learn')) {
