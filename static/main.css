@@ -43,3 +43,38 @@ body {
     user-select: none;
     cursor: pointer;
 }
+
+.question{
+    max-width: 7%;
+}
+
+.quiz-spectro{
+    max-width: 50%;
+}
+
+.draggable{
+    width: 200px;
+    height: 75px;
+    padding: 0.5em;
+    /* float: left; */
+    margin: 10px 10px 10px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.droppable{
+    width: 250px;
+    height: 100px;
+    padding: 0.5em;
+    /* float: left; */
+    margin: 10px;
+    margin-left: 50px;
+}
+
+.draggable:hover{
+    cursor: move;
+}
+
+.droppable.ui-state-hover {
+    background-color: #b5ca8d;
+}

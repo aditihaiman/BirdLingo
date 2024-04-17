@@ -16,6 +16,7 @@ function navigate_next() {
         //if at learn/3 go to quiz template
         if (window.location.href.includes('learn/3')) {
             //FILL IN WHOEVER IS DOING QUIZ
+            window.location.href = "/quiz/0"
         }
         else window.location.href = "/learn/" + (Number(learn_data['id']) + 1);
     }
