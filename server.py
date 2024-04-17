@@ -35,10 +35,20 @@ learn_data = {
         "intro-text": "Let's try another bird: ",
         "image": "https://www.allaboutbirds.org/guide/assets/photo/297087301-720px.jpg",
         "audio": "media/Cardinal.mp3",
-        "attention": "",
-        "characteristics": "",
-        "spectrogram": "",
-        "spectro-visual": "",
+        "attention": [
+            "How many sections are there to the song?",
+            "Is there any repetition?",
+            "Is the tone clear like a whistle or harsh like a scream?",
+        ],
+        "characteristics": [
+            "Two parts: First is slow falling pitch, second is a series of fast notes going up and down",
+            "Clear, whistle-like quality",
+        ],
+        "spectrogram": [
+            "What do you notice about how the speed of the notes vary throughout the song?",
+            "Does the spectrogram reflect these qualities?",
+        ],
+        "spectro-visual": "media/cardinal-spectro.png",
     },
     2: {
         "id": 2,
@@ -46,10 +56,16 @@ learn_data = {
         "intro-text": "Let's try another bird: ",
         "image": "https://www.allaboutbirds.org/guide/assets/photo/60386921-1280px.jpg",
         "audio": "media/Dove.mp3",
-        "attention": "",
-        "characteristics": "",
-        "spectrogram": "",
-        "spectro-visual": "",
+        "attention": ["There is some background noise in this recording. Make sure you are listening carefully to the dove and not the other birds."],
+        "characteristics": [
+            "Repeated 'coo-ing' sound",
+            "Relatively low pitch that stays constant (doesn't move up or down)",
+            "Clear-ish sound (not harsh but not as clear because of how low-pitched it is)",
+        ],
+        "spectrogram": [
+            "Notice how the constant, low pitch is reflected in the spectrogram with lines at the bottom of the graph."
+        ],
+        "spectro-visual": "media/dove-spectro.png",
     },
     3: {
         "id": 3,
@@ -60,7 +76,7 @@ learn_data = {
         "attention": "",
         "characteristics": "",
         "spectrogram": "",
-        "spectro-visual": "",
+        "spectro-visual": "media/robin-spectro.png",
     },
 }
 
