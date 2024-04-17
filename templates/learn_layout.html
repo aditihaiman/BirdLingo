@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
+
 <script>
     let learn_data = {{ learn_data| tojson}};
     console.log(learn_data);

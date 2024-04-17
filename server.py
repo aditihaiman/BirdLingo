@@ -7,6 +7,8 @@ app = Flask(__name__)
 
 current_id = 9
 
+total = 0
+
 learn_data = {
     0: {
         "id": 0,
@@ -80,6 +82,54 @@ learn_data = {
     },
 }
 
+quiz_data = {
+    0: {
+        "id": 0,
+        "type": "multiple_choice",
+        "text": "Select which qualities apply to the recording. Use the hint to see a spectrogram.",
+        "image": "",
+        "audio": ["media/Hawk.mp3"],
+        "options": [
+            "harsh",
+            "falling pitch",
+            "multiple parts",
+            "variable pitch"
+        ],
+        "spectro-visual": ["media/hawk-spectro.png"],
+        "correct": []
+    },
+    1: {
+        "id": 1,
+        "type": "multiple_choice",
+        "text": "What bird is singing? Use the hint to see a spectrogram.",
+        "image": "",
+        "audio": ["media/Cardinal.mp3"],
+        "options": [
+            "Red Tailed Hawk",
+            "American Robin",
+            "Mourning Dove",
+            "Northern Cardinal"
+        ],
+        "spectro-visual": ["media/cardinal-spectro.png"],
+        "correct": []
+    },
+    2: {
+        "id": 2,
+        "type": "drag_drop",
+        "text": "Drag the correct name to each recording. Use the hint to see a spectrogram.",
+        "image": "",
+        "audio": ["media/Hawk.mp3", "media/Robin.mp3"],
+        "options": [
+            "Northern Cardinal",
+            "Mourning Dove",
+            "Red-Tailed Hawk",
+            "American Robin"
+        ],
+        "spectro-visual": ["media/hawk-spectro.png", "media/robin-spectro.png"],
+        "correct": []
+    }
+}
+
 
 # ROUTES
 
@@ -106,6 +156,29 @@ def home():
 def learn(id=None):
     global learn_data
     return render_template("learn_layout.html", learn_data=learn_data[int(id)])
+
+@app.route("/quiz/<id>")
+def quiz(id=None):
+    global quiz_data
+    return render_template("quiz_layout.html", quiz_data=quiz_data[int(id)])
+
+
+@app.route("/results")
+def results():
+    return render_template("quiz_results.html")
+
+@app.route('/update_total', methods=['POST'])
+def update_variable():
+    global total
+    new_value = request.form['variable']
+    if total <= int(new_value):
+        total = total + 1
+    print(total)
+    return "Variable updated successfully!"
+
+@app.route('/get_total', methods=['GET'])
+def get_total():
+    return jsonify({'variable': total})
 
 
 # @app.route("/search_results/<search_term>", methods=["GET", "POST"])

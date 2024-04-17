@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+
+<script>
+    let quiz_data = {{ quiz_data| tojson}};
+    console.log(quiz_data);
+</script>
+
+<div class="container">
+    <div class="row h2 m-auto pb-3">
+        Quiz
+    </div>
+    <div class="row h3 m-auto pb-3">
+        {{quiz_data['text']}}
+    </div>
+    <div class="row mb-5">
+        {% if quiz_data['type'] == "multiple_choice"%}
+        <div class="col-6">
+            <div class="row m-2">
+                <figure>
+                    <figcaption class="h4">Listen to the recording:</figcaption>
+                    <audio controls src="{{url_for('static', filename=quiz_data['audio'][0])}}"></audio>
+                </figure>
+            </div>
+
+            <div class="row m-2">
+                <figure>
+                    <img src="../static/media/question.png" alt="Image of question mark" class="question" id="hint_{{ quiz_data['id'] }}">
+                    <figcaption>Hint</figcaption>
+                </figure>
+
+                <div class="col d-none" id="spectro-info">
+                    <img src="{{url_for('static', filename=quiz_data['spectro-visual'][0])}}" class="img-fluid quiz-spectro mb-2">
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row m-2 h4">
+                Select the correct answer(s):
+            </div>
+            <div class="row m-2">
+                <div id="checkboxContainer">
+                    {% for item in quiz_data['options'] %}
+                    <input type="checkbox" id="{{item}}" value="{{item}}">
+                    <label for="{{item}}">{{item}}</label><br>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row m-2">
+                <button type="button" class="nav-button submit-button" id="submit-button-{{quiz_data['id']}}">Submit</button>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if quiz_data['type'] == "drag_drop"%}
+        <div class="col-8">
+            {% for item in quiz_data['audio'] %}
+            
+                <div class="row m-2">
+                    <figure>
+                        <figcaption class="h4">Listen to the recording:</figcaption>
+                        <audio controls src="{{url_for('static', filename=item)}}"></audio>
+                    </figure>
+                    <div class="ui-widget-header droppable"></div>
+                </div>
+
+                <div class="row m-2">
+                    <figure>
+                        <img src="../static/media/question.png" alt="Image of question mark" class="question" id="hint_{{ quiz_data['id'] }}">
+                        <figcaption>Hint</figcaption>
+                    </figure>
+
+                    <div class="col d-none" id="spectro-info">
+                        <img src="{{url_for('static', filename=quiz_data['spectro-visual'][0])}}" class="img-fluid quiz-spectro mb-2">
+                    </div>
+                </div>
+            
+            {% endfor %}
+        </div>
+        <!-- <div class="col-4">
+               <div class="h4">Label</div>
+              <div class="ui-widget-header droppable">
+              </div>
+        </div> -->
+        <div class="col-4">
+            <div class="h4">Drag Me</div>
+            {% for item in quiz_data['options'] %}            
+            <div class="draggable ui-widget-content row">
+                <p>{{item}}</p>
+            </div>
+            {% endfor %}
+            <div class="row m-2">
+                <button type="button" class="nav-button submit-button" id="submit-button-{{quiz_data['id']}}">Submit</button>
+            </div>
+        </div>
+        {% endif %}
+        
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <button type="button" class="nav-button" id="prev-button">Prev</button>  
+        </div>
+        <div class="col-4 h3">
+            <div class="m-auto">Question {{ (quiz_data['id'] | int) + 1 }} / 3</div>
+        </div>
+        <div class="col-4 float-end text-right">
+            <button type="button" class="nav-button" id="next-button">Next</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
