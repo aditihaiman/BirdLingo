@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename='learn.js') }}"></script>
+
+<div class="container">
+    <h3 class="text-center mt-4 mb-3">How to Listen to Birds</h3>
+    <p>What is the best way to listen to birds?</p>
+    <ul>
+        <li>When is the pitch increasing (rising) or decreasing (falling)?</li>
+        <li>Does the song have multiple parts?</li>
+        <li>What is the quality of the sound? Are the notes clear (flute/whistle) or harsh/scratchy?</li>
+    </ul>
+    <div class="audio-examples">
+        <h4 class="mt-4">Listen to Examples:</h4>
+        <audio controls src="{{ url_for('static', filename='example1.mp3') }}">Example 1</audio>
+        <audio controls src="{{ url_for('static', filename='example2.mp3') }}">Example 2</audio>
+        <audio controls src="{{ url_for('static', filename='example3.mp3') }}">Example 3</audio>
+    </div>
+    <div class="text-center mt-4">
+        {% if current_id > 0 %}
+            <a href="{{ url_for('learn', id=1) }}" class="nav-button">Start Learning</a>
+        {% else %}
+            <a href="{{ url_for('learn', id=current_id + 1) }}" class="btn btn-primary">Next</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
