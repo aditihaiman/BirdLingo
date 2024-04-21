@@ -19,9 +19,13 @@
     </div>
     <div class="text-center mt-4">
         {% if current_id > 0 %}
-            <a href="{{ url_for('learn', id=1) }}" class="nav-button">Start Learning</a>
+            <a href="{{ url_for('learn', id=1) }}">
+                <button type="button" class="nav-button">Start Learning</button>
+            </a>
         {% else %}
-            <a href="{{ url_for('learn', id=current_id + 1) }}" class="btn btn-primary">Next</a>
+            <a href="{{ url_for('learn', id=current_id + 1) }}">
+                <button type="button" class="nav-button">Next</button>
+            </a>
         {% endif %}
     </div>
 </div>
