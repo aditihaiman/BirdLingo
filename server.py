@@ -155,10 +155,22 @@ def home():
 #     return [new_bird, current_id]
 
 
-@app.route("/learn/<id>")
-def learn(id=None):
-    global learn_data
-    return render_template("learn_layout.html", learn_data=learn_data[int(id)])
+@app.route("/learn/<int:id>")
+def learn(id):
+    if id == 0:  # Check if the request is for the introductory slide
+        # Render the introductory template
+        return render_template("extra_learn_layout.html", current_id=current_id)
+    else:
+        # Adjust ID to align with existing data after the introduction
+        adjusted_id = id - 1
+        return render_template("learn_layout.html", learn_data=learn_data[adjusted_id])
+
+
+@app.route("/learn_checkpoint")
+def learn_checkpoint():
+    return render_template("learn_checkpoint_layout.html")
+
+
 
 
 @app.route("/quiz/<id>")
