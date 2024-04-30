@@ -108,8 +108,18 @@ body {
 .bird-image{
     border-radius: 20px;
     max-width: 460px;
+    width: 100%;
 }
 
+.button-2{
+    background-color: #658a6e;
+    color: white;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    text-align: center;
+    border-radius: 12px;
+    margin-right: 15px;
+    font-size: 18px;
+}
 
 .learn-heading-1 {
     color: #333;
@@ -124,7 +134,7 @@ body {
 
 .paragraph-3 {
     margin-bottom: 40px;
-    font-family: Montserrat, sans-serif;
+    font-family: Georgia, Times, Times New Roman, serif;
     font-size: 24px;
     line-height: 40px;
   }
