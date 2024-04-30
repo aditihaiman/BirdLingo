@@ -14,7 +14,7 @@ learn_data = {
         "id": 0,
         "name": "Red-Tailed Hawk",
         "intro-text": "Let's start with something easy: ",
-        "image": "https://www.allaboutbirds.org/guide/assets/photo/319861731-1280px.jpg",
+        "image": "../static/media/red_tailed_hawk.jpeg",
         "audio": "media/Hawk.mp3",
         "attention": [
             "When is it rising or falling in pitch?",

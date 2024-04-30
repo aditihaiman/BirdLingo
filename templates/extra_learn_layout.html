@@ -17,16 +17,17 @@
         <audio controls src="{{ url_for('static', filename='example2.mp3') }}">Example 2</audio>
         <audio controls src="{{ url_for('static', filename='example3.mp3') }}">Example 3</audio>
     </div>
-    <div class="text-center mt-4">
-        {% if current_id > 0 %}
-            <a href="{{ url_for('learn', id=1) }}">
-                <button type="button" class="nav-button">Start Learning</button>
+    <div class="row">
+        <div class="col">
+            <a href="/">
+                <button type="button" class="prev-button">&lt;</button>
             </a>
-        {% else %}
-            <a href="{{ url_for('learn', id=current_id + 1) }}">
-                <button type="button" class="nav-button">Next</button>
+        </div>
+        <div class="col text-right">
+            <a href="/learn/1">
+                <button type="button" class="next-button">&gt;</button>
             </a>
-        {% endif %}
+        </div>
     </div>
 </div>
 {% endblock %}

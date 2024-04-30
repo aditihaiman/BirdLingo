@@ -23,38 +23,37 @@
 </head>
 
 <body class="base">
-    <nav class="navbar navbar-expand-lg base">
+    <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="/">
             <h1 class="m-0 p-0">BirdLingo</h1>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-    </nav>
+      </nav>
 
     <div class="container">
         <script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
 
-        <div class="row text-center">
-            <div class="col">
-                <img src="../static/media/home-earth.svg">
-            </div>
-            <div class="col">
-                <div class="row">
-                    <h1>Welcome to BirdLingo</h1>
-                </div>
-                <div class="row mt-4 ml-4">
-                    <h2>Want to learn how to speak bird?</h2>
-                </div>
-                <div class="row get-started-button button-standard" id="home-learn">
-                    Learn
-                </div>
-                <div class="row get-started-button-2 button-standard" id="home-quiz">
-                    Quiz
-                </div>
-            </div>
+<div class="row text-center">
+    <div class="col">
+        <img src="../static/media/home-earth.svg">
+    </div>
+    <div class="col">
+        <div class="row">
+            <h1>Welcome to BirdLingo</h1>
         </div>
+        <div class="row mt-4 ml-4">
+            <h2>Want to learn how to speak bird?</h2>
+        </div>
+        <div class="row get-started-button button-standard" id="home-learn">
+            Learn
+        </div>
+        <div class="row get-started-button-2 button-standard" id="home-quiz">
+            Quiz
+        </div>
+    </div>
+</div>
     </div>
 
 </body>
