@@ -9,6 +9,51 @@ $(function () {
         $("#char-info").toggleClass('d-none');
     });
 
+    $( "#char-info" ).dialog({
+        autoOpen: false,
+        draggable: true,
+        show: {
+          effect: "blind",
+          duration: 500
+        },
+        hide: {
+          effect: "blind",
+          duration: 500
+        }
+      });
+   
+      $( "#characteristics" ).on( "click", function() {
+        if($("#char-info").dialog("isOpen")){
+            $( "#char-info" ).dialog( "close" );
+        }
+        else{
+            $( "#char-info" ).dialog( "open" );
+        }
+        
+      });
+
+      $( "#spectro-info" ).dialog({
+        autoOpen: false,
+        draggable: true,
+        show: {
+          effect: "blind",
+          duration: 500
+        },
+        hide: {
+          effect: "blind",
+          duration: 500
+        }
+      });
+   
+      $( "#spectrogram" ).on( "click", function() {
+        if($("#spectro-info").dialog("isOpen")){
+            $( "#spectro-info" ).dialog( "close" );
+        }
+        else{
+            $( "#spectro-info" ).dialog( "open" );
+        }
+        
+      });
 });
 
 

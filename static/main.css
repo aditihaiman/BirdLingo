@@ -132,6 +132,18 @@ body {
     font-family: Georgia, Times, Times New Roman, serif;
 }
 
+.learn-heading-2 {
+    color: #333;
+    text-align: left;
+    font-size: 40px;
+    margin-top: 10px;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+    font-family: Georgia, Times, Times New Roman, serif;
+    font-weight: bold;
+}
+
 .paragraph-3 {
     margin-bottom: 40px;
     font-family: Georgia, Times, Times New Roman, serif;
@@ -139,11 +151,17 @@ body {
     line-height: 40px;
   }
 
+.paragraph-2{
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+}
+
 
 .prev-button{
     color: #70d38b;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-    background-color: #fff;
+    background-color: transparent;
     font-size: 40px;
     font-weight: bolder;
     padding: 20px;
@@ -155,7 +173,7 @@ body {
     opacity: 1;
     color: #70d38b;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-    background-color: #fafffc;
+    background-color: transparent;
     font-size: 45px;
     font-weight: 700;
     padding: 20px;
