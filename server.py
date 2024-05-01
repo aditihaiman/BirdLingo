@@ -142,34 +142,23 @@ def home():
     return render_template("home.html")
 
 
-# @app.route("/add_bird", methods=["GET", "POST"])
-# def add_bird():
-#     global birds
-#     global current_id
-
-#     new_bird = request.get_json()
-#     current_id += 1
-#     new_bird["id"] = current_id
-#     birds[current_id] = new_bird
-
-#     return [new_bird, current_id]
-
 
 @app.route("/learn/<int:id>")
 def learn(id):
     if id == 0:  # Check if the request is for the introductory slide
         # Render the introductory template
         return render_template("extra_learn_layout.html", current_id=current_id)
+    elif id == 1:
+        return render_template("extra_learn_layout_1.html", current_id=current_id)
     else:
         # Adjust ID to align with existing data after the introduction
-        adjusted_id = id - 1
+        adjusted_id = id - 2
         return render_template("learn_layout.html", learn_data=learn_data[adjusted_id])
 
 
 @app.route("/learn_checkpoint")
 def learn_checkpoint():
     return render_template("learn_checkpoint_layout.html")
-
 
 
 
@@ -197,70 +186,6 @@ def update_variable():
 @app.route("/get_total", methods=["GET"])
 def get_total():
     return jsonify({"variable": total})
-
-
-# @app.route("/search_results/<search_term>", methods=["GET", "POST"])
-# def search(search_term=None):
-#     global birds
-
-#     print("searching for: ", search_term)
-#     name_results = {}
-#     size_results = {}
-#     color_results = {}
-#     for i in range(current_id + 1):
-#         if search_term.lower() in birds[i]["name"].lower():
-#             name_results[birds[i]["name"]] = list(
-#                 birds[i]["name"].lower().partition(search_term.lower())
-#             )
-#             name_results[birds[i]["name"]].append(birds[i]["id"])
-#         if search_term.lower() in birds[i]["size"]:
-#             size_results[birds[i]["name"].lower()] = list(
-#                 birds[i]["size"].partition(search_term.lower())
-#             )
-#             size_results[birds[i]["name"].lower()].append(birds[i]["id"])
-#         for color in birds[i]["colors"]:
-#             if search_term.lower() in color:
-#                 color_results[birds[i]["name"].lower()] = list(
-#                     color.partition(search_term.lower())
-#                 )
-#                 color_results[birds[i]["name"].lower()].append(birds[i]["id"])
-#                 break
-
-#     return render_template(
-#         "search_results.html",
-#         results=[name_results, size_results, color_results],
-#         search_term=search_term,
-#     )
-
-
-# @app.route("/view/<id>")
-# def view_bird(id=None):
-#     global birds
-
-#     bird = birds[int(id)]
-
-#     return render_template("view.html", bird=bird)
-
-
-# @app.route("/edit/<id>")
-# def edit(id=None):
-#     global birds
-#     bird = birds[int(id)]
-#     return render_template("edit.html", bird=bird, id=id)
-
-
-# @app.route("/edit_bird", methods=["GET", "POST"])
-# def edit_bird():
-#     global birds
-
-#     data = request.get_json()
-#     updated_bird = data[0]
-#     id = data[1]
-#     updated_bird["id"] = id
-#     print(id)
-#     birds[int(id)] = updated_bird
-#     print(birds[int(id)])
-#     return [birds[int(id)], id]
 
 
 if __name__ == "__main__":
