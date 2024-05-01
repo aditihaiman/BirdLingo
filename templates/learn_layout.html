@@ -12,72 +12,71 @@
 
 
 <div class="row h3 m-auto pb-3">
-    {{learn_data['intro-text']}} {{learn_data['name']}}
+    <h1 class="learn-heading-1 center-block">{{learn_data['name']}}</h1>
+
 </div>
 <div class="row mb-5">
-    <div class="col-4">
-        <img src="{{learn_data['image']}}" alt="Image of {{learn_data['name']}}" class="img-fluid">
+    <div class="col-6">
+        <img src="{{learn_data['image']}}" alt="Image of {{learn_data['name']}}" class="img-fluid bird-image">
     </div>
-    <div class="col-4">
-        <div class="row m-2">
+
+
+    <div class="col-6">
+        <div class="row center-block m-2">
             <figure>
-                <figcaption class="h4">Listen to the {{learn_data['name']}}:</figcaption>
                 <audio controls src="{{url_for('static', filename=learn_data['audio'])}}"></audio>
             </figure>
         </div>
-        <div class="row m-2 h4">
-            Pay attention to:
 
-        </div>
-        <div class="row m-2">
+        <div class="row paragraph-3 center-block pt-2 mb-3">
+            <span class="">Pay attention to:</span>
+
             {% for item in learn_data['attention'] %}
-            <ul class="list-group mb-2">
-                <li class="list-group-item">{{item}}</li>
-            </ul>
-            
+
+            <br>{{loop.index}}. {{item}}
 
             {% endfor %}
         </div>
 
-    </div>
-    <div class="col-4">
-        <div class="col h4 base char-spectro p-4 text-center rounded" id="characteristics">
-            Characteristics
+        <div class="row center-block">
+            <button class="h4 p-3 button-standard get-started-button-2" id="characteristics">
+                Characteristics
 
+            </button>
+            <div class="col d-none" id="char-info">
+                {% for item in learn_data['characteristics'] %}
+                <ul class="list-group mb-2">
+                    <li class="list-group-item">{{item}}</li>
+                </ul>
+
+
+                {% endfor %}
+            </div>
+            <button class="h4 p-3 button-standard get-started-button-2" id="spectrogram">
+                Spectrogram
+            </button>
+            <div class="col d-none" id="spectro-info">
+                <img src="{{url_for('static', filename=learn_data['spectro-visual'])}}" class="img-fluid mb-2">
+
+                {% for item in learn_data['spectrogram'] %}
+                <ul class="list-group mb-2">
+                    <li class="list-group-item">{{item}}</li>
+                </ul>
+
+
+                {% endfor %}
+            </div>
         </div>
-        <div class="col d-none" id="char-info">
-            {% for item in learn_data['characteristics'] %}
-            <ul class="list-group mb-2">
-                <li class="list-group-item">{{item}}</li>
-            </ul>
-            
 
-            {% endfor %}
-        </div>
-        <div class="col h4 base char-spectro p-4 text-center rounded" id="spectrogram">
-            Spectrogram
-
-        </div>
-        <div class="col d-none" id="spectro-info">
-            <img src="{{url_for('static', filename=learn_data['spectro-visual'])}}" class="img-fluid mb-2">
-
-            {% for item in learn_data['spectrogram'] %}
-            <ul class="list-group mb-2">
-                <li class="list-group-item">{{item}}</li>
-            </ul>
-            
-
-            {% endfor %}
-        </div>
     </div>
 </div>
-<div class="row">
+<div class="row fixed-bottom">
     <div class="col">
-        <button type="button" class="nav-button" id="prev-button">Prev</button>
-        
+        <button type="button" class="prev-button" id="prev-button">&lt;</button>
+
     </div>
     <div class="col float-end text-right">
-        <button type="button" class="nav-button" id="next-button">Next</button>
+        <button type="button" class="next-button" id="next-button">&gt;</button>
     </div>
 </div>
 

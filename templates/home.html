@@ -1,29 +1,61 @@
-{% extends "layout.html" %}
+<!doctype html>
+<html lang="en">
 
-{% block content %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
 
-<script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<h1 class="font-weight-bold text-center pt-4" tabindex="0">Welcome to BirdLingo!</h1>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
 
-<h3 class="p-4" tabindex="0">
-    Learn to identify the songs of some year-round birds in NYC. 
-    The birds we will cover are: Red-Tailed Hawks, Northern Cardinals, 
-    Mourning Doves, and American Robins.
-</h3>
+    <title>BirdLingo</title>
 
-<div class="row">
-    <div class="col-6">
-        <div class="text-center h4 big-button" id="home-learn">
-            Learn How to Speak Bird
-        </div>
+</head>
+
+<body class="base">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="/">
+            <h1 class="m-0 p-0">BirdLingo</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+
+    <div class="container">
+        <script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+
+<div class="row text-center">
+    <div class="col">
+        <img src="../static/media/home-earth.svg">
     </div>
-    <div class="col-6">
-        <div class="text-center h4 big-button" id="home-quiz">
-            Quiz Yourself
+    <div class="col">
+        <div class="row">
+            <h1>Welcome to BirdLingo</h1>
+        </div>
+        <div class="row mt-4 ml-4">
+            <h2>Want to learn how to speak bird?</h2>
+        </div>
+        <div class="row get-started-button button-standard" id="home-learn">
+            Learn
+        </div>
+        <div class="row get-started-button-2 button-standard" id="home-quiz">
+            Quiz
         </div>
     </div>
 </div>
-<br>
-{% endblock %}
+    </div>
+
+</body>
+
+</html>
