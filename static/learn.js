@@ -62,11 +62,11 @@ function navigate_next() {
     if (window.location.href.includes('learn')) {
         if (window.location.href.includes('learn_checkpoint')) {
             // Redirect to the second learning page
-            window.location.href = "/learn/2";
-        } else if (window.location.href.includes('learn/2')) {
+            window.location.href = "/learn/4";
+        } else if (window.location.href.includes('learn/3')) {
             // Redirect to the checkpoint page after the second learning page
             window.location.href = "/learn_checkpoint";
-        } else if (currentId === 3) { // Assuming 4 is the ID of the last learning slide
+        } else if (currentId === 5) { // Assuming 4 is the ID of the last learning slide
             // Redirect to the quiz
             window.location.href = "/quiz/0";
         } else {
@@ -85,6 +85,8 @@ function navigate_prev() {
         // If at learn/0, go to prev template (fill in as needed)
         if (window.location.href.includes('learn/0')) {
             // FILL IN WHOEVER IS DOING MISCELLANEOUS
+        } else if (window.location.href.includes('learn/4')) {
+            window.location.href = '/learn_checkpoint';
         } else {
             window.location.href = "/learn/" + (currentId - 1);
         }
