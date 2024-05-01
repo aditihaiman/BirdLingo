@@ -4,31 +4,26 @@
 <script type="text/javascript" src="{{ url_for('static', filename='learn.js') }}"></script>
 
 <div class="container">
-    <h1 class="row learn-heading-1 p-0 pt-1">What is the best way to listen to birds?</h1>
+    <h1 class="row learn-heading-1 p-0 pt-1">What is a spectrogram?</h1>
 
-    <h2 class="learn-heading-2">Listen for...</h2>
+    <div class="row paragraph-3">
+        A spectrogram visualizes audio by recording the pitch (y-axis) and intensity (darkness) of a
+        sound over time (x-axis).
 
-    <div class="row audio-examples">
-        <div class="col paragraph-2">
-            When is the pitch increasing (rising)...
-        </div>
-        <div class="col center-block text-right">
-            <audio controls src="../static/media/example0.mp3">Example 0</audio>
-        </div>
     </div>
 
     <div class="row audio-examples">
         <div class="col paragraph-2">
-            or decreasing (falling)?
+            When is the pitch increasing (rising) or decreasing (falling)?
         </div>
         <div class="col center-block text-right">
             <audio controls src="../static/media/example1.mp3">Example 1</audio>
         </div>
     </div>
 
-    <div class="row mt-4">
+    <div class="row mt-5">
         <div class="col paragraph-2">
-            Does the song have one part that might be repeated... 
+            Does the song have one part that might be repeated...
         </div>
         <div class="col center-block text-right">
             <audio controls src="../static/media/example2.mp3">Example 2</audio>
@@ -36,7 +31,7 @@
         </div>
     </div>
 
-    <div class="row mb-4">
+    <div class="row mb-5">
         <div class="col paragraph-2">
             or multiple distinct parts?
         </div>
@@ -46,7 +41,7 @@
         </div>
     </div>
 
-    <div class="row mt-4">
+    <div class="row mt-5">
         <div class="col paragraph-2">
             What is the quality of the sound? Are the notes clear (like a flute or whistle)...
         </div>
@@ -71,12 +66,12 @@
 
     <div class="row fixed-bottom">
         <div class="col">
-            <a href="/">
+            <a href="/learn/0">
                 <button type="button" class="prev-button">&lt;</button>
             </a>
         </div>
         <div class="col text-right">
-            <a href="/learn/1">
+            <a href="/learn/2">
                 <button type="button" class="next-button">&gt;</button>
             </a>
         </div>
