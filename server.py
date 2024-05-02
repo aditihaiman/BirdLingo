@@ -172,6 +172,10 @@ def quiz(id=None):
 def results():
     return render_template("quiz_results.html")
 
+@app.route("/transition")
+def transition():
+    return render_template("transition.html")
+
 
 @app.route("/update_total", methods=["POST"])
 def update_variable():

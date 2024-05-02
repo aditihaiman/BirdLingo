@@ -165,7 +165,7 @@ body {
 
 
 .prev-button{
-    color: #70d38b;
+    color: #235390;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
     background-color: transparent;
     font-size: 40px;
@@ -177,7 +177,7 @@ body {
 
 .next-button{
     opacity: 1;
-    color: #70d38b;
+    color: #235390;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
     background-color: transparent;
     font-size: 45px;
@@ -237,5 +237,5 @@ body {
 }
 
 .droppable.ui-state-hover {
-    background-color: #b5ca8d;
+    background-color: #658a6e;
 }

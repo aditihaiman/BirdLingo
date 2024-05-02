@@ -10,10 +10,12 @@
 </script>
 
 <div class="container">
-    <div class="row h2 m-auto pb-3">
-        Quiz
+    <div class="row h1 text-center pb-5">
+        <div class="col-12 font-weight-bold">
+            QUIZ
+        </div>
     </div>
-    <div class="row h3 m-auto pb-3">
+    <div class="row h3 m-auto pb-5">
         {{quiz_data['text']}}
     </div>
     <div class="row mb-5">
@@ -21,7 +23,7 @@
         <div class="col-6">
             <div class="row m-2">
                 <figure>
-                    <figcaption class="h4">Listen to the recording:</figcaption>
+                    <figcaption class="h4 pb-4">Listen to the recording:</figcaption>
                     <audio controls src="{{url_for('static', filename=quiz_data['audio'][0])}}"></audio>
                 </figure>
             </div>
@@ -38,8 +40,10 @@
             </div>
         </div>
         <div class="col-6">
-            <div class="row m-2 h4">
-                Select the correct answer(s):
+            <div class="row m-2">
+                <div class="h4 pb-1">
+                    Select the correct answer(s):
+                </div>
             </div>
             <div class="row m-2">
                 <div id="checkboxContainer">
@@ -50,7 +54,7 @@
                 </div>
             </div>
             <div class="row m-2">
-                <button type="button" class="nav-button submit-button" id="submit-button-{{quiz_data['id']}}">Submit</button>
+                <button type="button" class="get-started-button-2 button-standard submit-button" id="submit-button-{{quiz_data['id']}}">Submit</button>
             </div>
         </div>
         {% endif %}
@@ -93,21 +97,21 @@
             </div>
             {% endfor %}
             <div class="row m-2">
-                <button type="button" class="nav-button submit-button" id="submit-button-{{quiz_data['id']}}">Submit</button>
+                <button type="button" class="get-started-button-2 button-standard submit-button" id="submit-button-{{quiz_data['id']}}">Submit</button>
             </div>
         </div>
         {% endif %}
         
     </div>
-    <div class="row">
+    <div class="row fixed-bottom">
         <div class="col-4">
-            <button type="button" class="nav-button" id="prev-button">Prev</button>  
+            <button type="button" class="prev-button" id="prev-button">&lt;</button>  
         </div>
-        <div class="col-4 h3">
+        <div class="col-4 h3 text-center">
             <div class="m-auto">Question {{ (quiz_data['id'] | int) + 1 }} / 3</div>
         </div>
         <div class="col-4 float-end text-right">
-            <button type="button" class="nav-button" id="next-button">Next</button>
+            <button type="button" class="next-button" id="next-button">&gt;</button>
         </div>
     </div>
 </div>

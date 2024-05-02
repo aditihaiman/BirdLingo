@@ -1,3 +1,7 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
 <!doctype html>
 <html lang="en">
 
@@ -22,11 +26,11 @@
 
 </head>
 
-<body class="base">
+<body class="accent">
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="/">
-            <h1 class="m-0 p-0">BirdLingo</h1>
-        </a>
+        <!-- <a class="navbar-brand" href="/"> -->
+            <!-- <h1 class="m-0 p-0">BirdLingo</h1> -->
+        <!-- </a> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -46,7 +50,7 @@
         <div class="row mt-4 ml-4">
             <h2>Want to learn how to speak bird?</h2>
         </div>
-        <div class="row get-started-button button-standard" id="home-learn">
+        <div class="row get-started-button-2 button-standard" id="home-learn">
             Learn
         </div>
         <div class="row get-started-button-2 button-standard" id="home-quiz">
@@ -59,3 +63,5 @@
 </body>
 
 </html>
+
+{% endblock %}

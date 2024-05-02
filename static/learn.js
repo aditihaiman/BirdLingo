@@ -68,7 +68,7 @@ function navigate_next() {
             window.location.href = "/learn_checkpoint";
         } else if (currentId === 5) { // Assuming 4 is the ID of the last learning slide
             // Redirect to the quiz
-            window.location.href = "/quiz/0";
+            window.location.href = "/transition";
         } else {
             // Navigate to the next learning slide
             window.location.href = "/learn/" + (currentId + 1);

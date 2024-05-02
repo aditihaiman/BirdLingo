@@ -2,6 +2,7 @@ $(function () {
     $("#next-button").on('click', navigate_next);
     $("#prev-button").on('click', navigate_prev);
     $("#home-quiz").on('click', navigate_next);
+    $("#home-learn").on('click', go_to_learn);
     $(".submit-button").on('click', submit);
 
     $(".question").on('click', function(){
@@ -38,6 +39,10 @@ function navigate_prev() {
         }
         else window.location.href = "/quiz/" + (Number(quiz_data['id']) - 1);
     }
+}
+
+function go_to_learn() {
+    window.location.href = "/learn/0"
 }
 
 function submit() {
