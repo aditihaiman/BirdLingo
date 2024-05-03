@@ -1,12 +1,50 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename='learn.js') }}"></script>
+
 <div class="container">
-    <h1 class="learn-heading-1 pb-0">Learning Checkpoint</h1>
-    <h3>Now you know what the Red-Tailed Hawk and Northern Cardinal sound like! Can you differentiate their songs? Drag the correct label to the corresponding recording (click on the hint to see a spectrogram):</h2>
-    
-    <!-- Drag-drop review session -->
-    <!-- Add your drag-drop review session here -->
+    <h1 class="learn-heading-1">Learning Checkpoint</h1>
+    <h3 class="paragraph-2">Now you know what the Red-Tailed Hawk and Northern Cardinal sound like! Can you differentiate their songs? Drag the correct label to the corresponding drop zone (click on the hint to see a spectrogram):</h3>
+
+    <div class="row justify-content-center align-items-start my-4">
+        <div class="col-md-8">
+            <div class="row m-2">
+                <figure>
+                    <figcaption class="h4">Listen to Recording 1:</figcaption>
+                    <audio controls>
+                        <source src="../static/media/Cardinal.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                    </audio>
+                </figure>
+                <div class="ui-widget-header droppable" data-bird="northern-cardinal">
+                    <h5></h5>
+                </div>
+            </div>
+            <div class="row m-2">
+                <figure>
+                    <figcaption class="h4">Listen to Recording 2:</figcaption>
+                    <audio controls>
+                        <source src="../static/media/Hawk.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                    </audio>
+                </figure>
+                <div class="ui-widget-header droppable" data-bird="red-tailed-hawk">
+                    <h5></h5>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="h4">Drag the labels below to the correct drop zone:</div>
+            <div class="draggable ui-widget-content row" id="northern-cardinal">
+                <p id="northern-cardinal">Northern Cardinal</p>
+            </div>
+            <div class="draggable ui-widget-content row" id="red-tailed-hawk">
+                <p id="red-tailed-hawk">Red-Tailed Hawk</p>
+            </div>
+        </div>
+    </div>
 
     <div class="row fixed-bottom">
         <div class="col">
