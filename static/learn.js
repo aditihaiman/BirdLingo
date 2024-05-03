@@ -12,30 +12,51 @@ $(function () {
         $("#char-info").toggleClass('d-none');
     });
 
-    // Initialize dialogs
-    $("#char-info, #spectro-info").dialog({
+    $( "#char-info" ).dialog({
         autoOpen: false,
         draggable: true,
         show: {
-            effect: "blind",
-            duration: 500
+          effect: "blind",
+          duration: 500
         },
         hide: {
-            effect: "blind",
-            duration: 500
+          effect: "blind",
+          duration: 500
         }
-    });
+      });
+   
+      $( "#characteristics" ).on( "click", function() {
+        if($("#char-info").dialog("isOpen")){
+            $( "#char-info" ).dialog( "close" );
+        }
+        else{
+            $( "#char-info" ).dialog( "open" );
+        }
+        
+      });
 
-    // Event to open/close dialog on button click
-    $("#characteristics, #spectrogram").on("click", function() {
-        var targetId = $(this).data("target");
-        var targetDialog = $("#" + targetId);
-        if (targetDialog.dialog("isOpen")) {
-            targetDialog.dialog("close");
-        } else {
-            targetDialog.dialog("open");
+      $( "#spectro-info" ).dialog({
+        autoOpen: false,
+        draggable: true,
+        show: {
+          effect: "blind",
+          duration: 500
+        },
+        hide: {
+          effect: "blind",
+          duration: 500
         }
-    });
+      });
+   
+      $( "#spectrogram" ).on( "click", function() {
+        if($("#spectro-info").dialog("isOpen")){
+            $( "#spectro-info" ).dialog( "close" );
+        }
+        else{
+            $( "#spectro-info" ).dialog( "open" );
+        }
+        
+      });
 
     // Drag and Drop functionality
     $(".draggable").draggable({
