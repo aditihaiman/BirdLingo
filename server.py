@@ -191,6 +191,12 @@ def update_variable():
 def get_total():
     return jsonify({"variable": total})
 
+@app.route("/clear_total", methods=["POST"])
+def clear_total():
+    global total
+    total = 0
+    return "Total cleared"
+
 
 if __name__ == "__main__":
     app.run(debug=True)

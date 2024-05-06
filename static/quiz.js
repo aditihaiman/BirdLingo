@@ -18,8 +18,20 @@ $(function () {
 });
 
 function navigate_next() {
+    if (!window.location.href.includes('quiz')) {
+        $.ajax({
+            type: "POST",
+            url: "/clear_total",
+            success: function(response) {
+                console.log("Total cleared!");
+            },
+            error: function(xhr, status, error) {
+                console.error("Error updating variable:", error);
+            }
+        });
+    }
+
     if (window.location.href.includes('quiz')) {
-        //if at quiz/3 go to quiz template
         if (window.location.href.includes('quiz/2')) {
             //FILL IN WHOEVER IS DOING QUIZ
             window.location.href = "/results";
@@ -75,6 +87,13 @@ function submit() {
                     console.error("Error updating variable:", error);
                 }
             });
+            $("#quiz-feedback").empty()
+            $("#quiz-feedback").append("Correct! &check;");
+
+        }
+        else{
+            $("#quiz-feedback").empty()
+            $("#quiz-feedback").append("Incorrect &cross;");
         }
     }
     else if(buttonId == "submit-button-1"){
@@ -105,6 +124,12 @@ function submit() {
                     console.error("Error updating variable:", error);
                 }
             });
+            $("#quiz-feedback").empty()
+            $("#quiz-feedback").append("Correct! &check;");
+        }
+        else{
+            $("#quiz-feedback").empty()
+            $("#quiz-feedback").append("Incorrect &cross;");
         }
     }
     else if(buttonId == "submit-button-2"){
@@ -134,6 +159,12 @@ function submit() {
                     console.error("Error updating variable:", error);
                 }
             });
+            $("#quiz-feedback").empty()
+            $("#quiz-feedback").append("Correct! &check;");
+        }
+        else{
+            $("#quiz-feedback").empty()
+            $("#quiz-feedback").append("Incorrect &cross;");
         }
     }
 }
