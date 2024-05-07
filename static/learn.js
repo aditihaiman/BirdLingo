@@ -5,14 +5,18 @@ $(function () {
     $("#home-learn").on('click', navigate_next);
 
     // Toggling information dialogs
-    $("#spectrogram").on('click', function() {
-        $("#spectro-info").toggleClass('d-none');
-    });
-    $("#characteristics").on('click', function() {
-        $("#char-info").toggleClass('d-none');
-    });
+    $("#spectrogram").hover(
+      function() {
+        $("#spectro-info").toggleClass('d-none'); // Toggle visibility on hover
+      }
+    );
+    $("#characteristics").hover(
+      function() {
+        $("#char-info").toggleClass('d-none'); // Toggle visibility on hover
+      }
+    );
 
-    $( "#char-info" ).dialog({
+    $("#char-info").dialog({
         autoOpen: false,
         draggable: true,
         show: {
@@ -23,18 +27,18 @@ $(function () {
           effect: "blind",
           duration: 500
         }
-      });
+    });
    
-    $( "#characteristics" ).on( "click", function() {
+    $("#characteristics").on("click", function() {
         if($("#char-info").dialog("isOpen")){
-            $( "#char-info" ).dialog( "close" );
+            $("#char-info").dialog("close");
         }
         else{
-            $( "#char-info" ).dialog( "open" );
+            $("#char-info").dialog("open");
         }
     });
 
-    $( "#spectro-info" ).dialog({
+    $("#spectro-info").dialog({
         autoOpen: false,
         draggable: true,
         show: {
@@ -47,12 +51,12 @@ $(function () {
         }
     });
 
-    $( "#spectrogram" ).on( "click", function() {
+    $("#spectrogram").on("click", function() {
         if($("#spectro-info").dialog("isOpen")){
-            $( "#spectro-info" ).dialog( "close" );
+            $("#spectro-info").dialog("close");
         }
         else{
-            $( "#spectro-info" ).dialog( "open" );
+            $("#spectro-info").dialog("open");
         }
     });
 
@@ -69,7 +73,14 @@ $(function () {
 
     $(".droppable").droppable({
         accept: ".draggable",
+        over: function (event, ui) {
+            $(this).addClass("ui-state-hover");
+        },
+        out: function (event, ui) {
+            $(this).removeClass("ui-state-hover");
+        },
         drop: function(event, ui) {
+            $(this).removeClass("ui-state-hover");
             var dropZoneBird = $(this).data('bird');
             var draggedBird = ui.draggable.attr('id');
 
