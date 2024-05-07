@@ -25,17 +25,16 @@ $(function () {
         }
       });
    
-      $( "#characteristics" ).on( "click", function() {
+    $( "#characteristics" ).on( "click", function() {
         if($("#char-info").dialog("isOpen")){
             $( "#char-info" ).dialog( "close" );
         }
         else{
             $( "#char-info" ).dialog( "open" );
         }
-        
-      });
+    });
 
-      $( "#spectro-info" ).dialog({
+    $( "#spectro-info" ).dialog({
         autoOpen: false,
         draggable: true,
         show: {
@@ -46,17 +45,16 @@ $(function () {
           effect: "blind",
           duration: 500
         }
-      });
-   
-      $( "#spectrogram" ).on( "click", function() {
+    });
+
+    $( "#spectrogram" ).on( "click", function() {
         if($("#spectro-info").dialog("isOpen")){
             $( "#spectro-info" ).dialog( "close" );
         }
         else{
             $( "#spectro-info" ).dialog( "open" );
         }
-        
-      });
+    });
 
     // Drag and Drop functionality
     $(".draggable").draggable({
@@ -71,15 +69,9 @@ $(function () {
 
     $(".droppable").droppable({
         accept: ".draggable",
-        classes: {
-            "ui-droppable-hover": "ui-state-hover"
-        },
         drop: function(event, ui) {
             var dropZoneBird = $(this).data('bird');
             var draggedBird = ui.draggable.attr('id');
-
-            console.log("Drop Zone expects:", dropZoneBird); // Debugging
-            console.log("Dragged Item ID:", draggedBird); // Debugging
 
             if (draggedBird === dropZoneBird) {
                 $(this).append(ui.draggable);
@@ -89,14 +81,25 @@ $(function () {
                     of: $(this)
                 });
                 ui.draggable.css("margin", 0);
-                alert("Correct! You placed the " + draggedBird + " in the right zone.");
+                provideFeedback(true);
             } else {
                 $(ui.draggable).css({ top: "0px", left: "0px" }); // Reset position
-                alert("Incorrect. Try again!");
+                provideFeedback(false);
             }
         }
     });
 });
+
+function provideFeedback(isCorrect) {
+    var feedbackElement = $("#learn-feedback");
+    feedbackElement.empty();
+
+    if (isCorrect) {
+        feedbackElement.append("<p>Correct! &check;</p>");
+    } else {
+        feedbackElement.append("<p>Incorrect &cross;. Please try again!</p>");
+    }
+}
 
 function navigate_next() {
     let currentId = parseInt(window.location.pathname.split('/').pop());
@@ -116,7 +119,7 @@ function navigate_next() {
 }
 
 function navigate_prev() {
-    let currentId = parseInt(window.location.pathname.split('/'). pop());
+    let currentId = parseInt(window.location.pathname.split('/').pop());
     if (window.location.href.includes('learn')) {
         if (window.location.href.includes('learn/0')) {
             // Fill in whoever is handling miscellaneous
