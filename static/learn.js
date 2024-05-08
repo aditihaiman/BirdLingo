@@ -5,16 +5,12 @@ $(function () {
     $("#home-learn").on('click', navigate_next);
 
     // Toggling information dialogs
-    $("#spectrogram").hover(
-      function() {
-        $("#spectro-info").toggleClass('d-none'); // Toggle visibility on hover
-      }
-    );
-    $("#characteristics").hover(
-      function() {
-        $("#char-info").toggleClass('d-none'); // Toggle visibility on hover
-      }
-    );
+    $("#spectrogram").on('click', function() {
+        $("#spectro-info").toggleClass('d-none');
+    });
+    $("#characteristics").on('click', function() {
+        $("#char-info").toggleClass('d-none');
+    });
 
     $("#char-info").dialog({
         autoOpen: false,
