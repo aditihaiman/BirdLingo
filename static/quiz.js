@@ -47,7 +47,7 @@ function navigate_prev() {
     if (window.location.href.includes('quiz')) {
         //if at quiz/0 go to prev template
         if (window.location.href.includes('quiz/0')) {
-            //FILL IN WHOEVER IS DOING MISCELLANEOUS
+            window.location.href = "/transition";
         }
         else window.location.href = "/quiz/" + (Number(quiz_data['id']) - 1);
     }
